@@ -6,7 +6,8 @@ def write_count_words(counters, output_folder):
         os.makedirs(output_folder)
 
     # save the results using tsv format
-    with open("data/output/results.tsv", "w", encoding="utf-8") as f:
+    output_path = os.path.join(output_folder, "results.tsv")
+    with open(output_path, "w", encoding="utf-8") as f:
         for key, value in counters.items():
             # write the key and value to the file
             f.write(f"{key}\t{value}\n")
