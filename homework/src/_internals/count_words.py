@@ -1,9 +1,5 @@
-def count_words(input_files_list):
+def count_words(words):
     counter = {}
-    for filename in input_files_list:
-        with open("data/input/" + filename) as f:
-            for l in f:
-                for w in l.split():
-                    w = w.lower().strip(",.!?")
-                    counter[w] = counter.get(w, 0) + 1
+    for word in words:
+        counter[word] = counter.get(word, 0) + 1
     return counter
